@@ -1,20 +1,28 @@
-# Vikunja Cross-Platform App
+# Vikunja App (community fork)
 
-[![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/go-vikunja/app/latest/total)](https://github.com/go-vikunja/app/releases/latest)
-[![Beta Release on Google Play](https://img.shields.io/badge/Google_Play-Beta-blue)](https://play.google.com/store/apps/details?id=io.vikunja.app)
-[![Talk on Matrix](https://img.shields.io/matrix/vikunja%3Amatrix.org)](https://matrix.to/#/#vikunja:matrix.org)
+This is a **maintained fork** of
+[go-vikunja/app](https://github.com/go-vikunja/app), the official
+cross-platform app for [Vikunja](https://vikunja.io), the fluffy, open-source,
+self-hostable to-do app.
 
-This repo contains the Cross-Platform app for Vikunja, the fluffy, open-source, self-hostable to-do app.
-Vikunja helps you organize tasks, collaborate with teams, and view projects in multiple formats including list, Gantt, table, and Kanban views. Built with privacy in mind, Vikunja gives you complete control over your data whether you self-host or use Vikunja Cloud. Learn more at the [main Vikunja repository](https://github.com/go-vikunja/vikunja/).
+The upstream project's tagged releases stopped in 2024. This fork keeps the
+Android app current for personal use and adds features on top. Not affiliated
+with the official Vikunja project.
 
-## Translations
+## Changes vs upstream
 
-[Check out the docs](https://vikunja.io/docs/translations/) about how to contribute translations or add a new language for translation.
+- **Task detail page** — tap a task to open a full read view (description,
+  labels, dates, priority, progress, attachments) with edit/comments actions
+- **Attachment upload** from the app (multipart PUT, Vikunja v2.5.0 quirk)
+- **In-app attachment viewers** — PDFs render natively (pinch zoom), HTML
+  files render in a WebView; other types open externally; downloads are cached
+- **Clickable links in task descriptions** — bare `http://`, `https://` and
+  `www.` URLs open the default browser
+- **Home-screen widget** — tap task name to open the app, configurable
+  lookahead days, auto-refresh when tasks change, always-on periodic sync
+- **Week-start setting** aligned with the Vikunja API convention (0=Sunday)
+- **Settings UI fixes** (default-project dropdown width, API-value alignment)
 
-## Disclaimer
+MIT licensed, same as upstream.
 
-This app is in alpha pre-release. You must absolutely expect things to not work, and sometimes even break something in the backend. Using this app on important production backends is possible but discouraged. However, as we rely on your feedback about missing features and bugs, we do encourage you to try it out and give us feedback here on GitHub. This app requires the latest **stable** build of Vikunja (see [here](https://vikunja.io/docs/versions/)) to run. We are not responsible for lost data and similar destruction.
-
-If you have anything to contribute, please open a PR. It is encouraged to let us know before you start developing, so we can discuss possible overlap with features other people might already be working on. This avoids unnecessary waste of time for either party.
-
-The latest unstable builds are available on the [Google Play Beta](https://play.google.com/store/apps/details?id=io.vikunja.app) and on the [download server](https://dl.vikunja.io/app/). Stable releases are available on the [download server](https://dl.vikunja.io/app/) and the [Releases](https://github.com/go-vikunja/app/releases/latest) page. If you want to try this app on an iPhone, I cannot provide support, as I do not have an iPhone to develop on. However, contributors have confirmed that it works™. If you do decide to try it out, please share with the community any bugs you experience.
+---
